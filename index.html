@@ -232,57 +232,132 @@
     <div>
         <label for="pseudopotentials">Choose pseudopotentials: </label>
         <select id="pseudopotentials" onchange="updateLinks(this.value)">
-            <option value="GBRV">GBRV</option>
-            <option value="PSL">PSL</option>
+            <option value="NL-GBRV">GBRV</option>
+            <option value="NL- PSL">PSL</option>
         </select>
     </div>
     <div class="container">
         <div class="container-fliud">
             <div class="periodic-table">
-                <div class="element H"><a href="https://example.com/elements/H">H</a></div>
-                <div class="element He"><a href="https://example.com/elements/He">He</a></div>
-                <div class="element Li"><a href="https://example.com/elements/Li">Li</a></div>
-                <div class="element Be"><a href="https://example.com/elements/Be">Be</a></div>
-                <div class="element B"><a href="https://example.com/elements/B">B</a></div>
-                <div class="element C"><a href="https://example.com/elements/C">C</a></div>
-                <div class="element N"><a href="https://example.com/elements/N">N</a></div>
-                <div class="element O"><a href="https://example.com/elements/O">O</a></div>
-                <div class="element F"><a href="https://example.com/elements/F">F</a></div>
-                <div class="element Ne"><a href="https://example.com/elements/Ne">Ne</a></div>
-                <div class="element Na"><a href="https://example.com/elements/Na">Na</a></div>
-                <div class="element Mg"><a href="https://example.com/elements/Mg">Mg</a></div>
-                <div class="element Al"><a href="https://example.com/elements/Al">Al</a></div>
-                <div class="element Si"><a href="https://example.com/elements/Si">Si</a></div>
-                <div class="element P"><a href="https://example.com/elements/P">P</a></div>
-                <div class="element S"><a href="https://example.com/elements/S">S</a></div>
-                <div class="element Cl"><a href="https://example.com/elements/Cl">Cl</a></div>
-                <div class="element Ar"><a href="https://example.com/elements/Ar">Ar</a></div>
-                <div class="element K"><a href="https://example.com/elements/K">K</a></div>
-                <div class="element Ca"><a href="https://example.com/elements/Ca">Ca</a></div>
-                <div class="element Sc"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Sc_gbrv.psp8">Sc</a></div>
-                <div class="element Ti"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ti_gbrv.psp8">Ti</a></div>
-                <div class="element V"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/V_gbrv.psp8">V</a></div>
-                <div class="element Cr"><a href="https://example.com/elements/Cr">Cr</a></div>
-                <div class="element Mn"><a href="https://example.com/elements/Mn">Mn</a></div>
-                <div class="element Fe"><a href="https://example.com/elements/Fe">Fe</a></div>
-                <div class="element Co"><a href="https://example.com/elements/Co">Co</a></div>
-                <div class="element Ni"><a href="https://example.com/elements/Ni">Ni</a></div>
-                <div class="element Cu"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Cu_gbrv.psp8">Cu</a></div>
-                <div class="element Zn"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Zn_gbrv.psp8">Zn</a></div>
-                <div class="element Y"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Y_gbrv.psp8">Y</a></div>
-                <div class="element Zr"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Zr_gbrv.psp8">Zr</a></div>
-                <div class="element Nb"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Nb_gbrv.psp8">Nb</a></div>
-                <div class="element Mo"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Mo_gbrv.psp8">Mo</a></div>
-                <div class="element Pd"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Pd_NLPP_gbrv.psp8">Pd</a></div>
-                <div class="element Ag"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ag_gbrv.psp8">Ag</a></div>
-                <div class="element Hf"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Hf_gbrv.psp8">Hf</a></div>
-                <div class="element Ta"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ta_gbrv.psp8">Ta</a></div>
-                <div class="element Pt"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Pt_gbrv.psp8">Pt</a></div>
-                <div class="element Au"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Au_gbrv.psp8">Au</a></div>
-                <div class="element Tl"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Tl_gbrv.psp8">Tl</a></div>
-                <div class="element La"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/La_gbrv.psp8">La</a></div>
-                <div class="element Ac"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ac_gbrv.psp8">Ac</a></div>
-            </div>
+            <div class="element H"><a href="https://example.com/elements/H">H</a></div>
+        <div class="element He"><a href="https://example.com/elements/He">He</a></div>
+        <div class="element Li"><a href="https://example.com/elements/Li">Li</a></div>
+        <div class="element Be"><a href="https://example.com/elements/Be">Be</a></div>
+        <div class="element B"><a href="https://example.com/elements/B">B</a></div>
+        <div class="element C"><a href="https://example.com/elements/C">C</a></div>
+        <div class="element N"><a href="https://example.com/elements/N">N</a></div>
+        <div class="element O"><a href="https://example.com/elements/O">O</a></div>
+        <div class="element F"><a href="https://example.com/elements/F">F</a></div>
+        <div class="element Ne"><a href="https://example.com/elements/Ne">Ne</a></div>
+        <div class="element Na"><a href="https://example.com/elements/Na">Na</a></div>
+        <div class="element Mg"><a href="https://example.com/elements/Mg">Mg</a></div>
+        <div class="element Al"><a href="https://example.com/elements/Al">Al</a></div>
+        <div class="element Si"><a href="https://example.com/elements/Si">Si</a></div>
+        <div class="element P"><a href="https://example.com/elements/P">P</a></div>
+        <div class="element S"><a href="https://example.com/elements/S">S</a></div>
+        <div class="element Cl"><a href="https://example.com/elements/Cl">Cl</a></div>
+        <div class="element Ar"><a href="https://example.com/elements/Ar">Ar</a></div>
+        <div class="element K"><a href="https://example.com/elements/K">K</a></div>
+        <div class="element Ca"><a href="https://example.com/elements/Ca">Ca</a></div>
+        <div class="element Sc"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Sc_gbrv.psp8">Sc</a></div>
+        <div class="element Ti"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ti_gbrv.psp8">Ti</a></div>
+        <div class="element V"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/V_gbrv.psp8">V</a></div>
+        <div class="element Cr"><a href="https://example.com/elements/Cr">Cr</a></div>
+        <div class="element Mn"><a href="https://example.com/elements/Mn">Mn</a></div>
+        <div class="element Fe"><a href="https://example.com/elements/Fe">Fe</a></div>
+        <div class="element Co"><a href="https://example.com/elements/Co">Co</a></div>
+        <div class="element Ni"><a href="https://example.com/elements/Ni">Ni</a></div>
+        <div class="element Cu"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Cu_gbrv.psp8">Cu</a></div>
+        <div class="element Zn"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Zn_gbrv.psp8">Zn</a></div>
+        <div class="element Ga"><a href="https://example.com/elements/Ga">Ga</a></div>
+        <div class="element Ge"><a href="https://example.com/elements/Ge">Ge</a></div>
+        <div class="element As"><a href="https://example.com/elements/As">As</a></div>
+        <div class="element Se"><a href="https://example.com/elements/Se">Se</a></div>
+        <div class="element Br"><a href="https://example.com/elements/Br">Br</a></div>
+        <div class="element Kr"><a href="https://example.com/elements/Kr">Kr</a></div>
+        <div class="element Rb"><a href="https://example.com/elements/Rb">Rb</a></div>
+        <div class="element Sr"><a href="https://example.com/elements/Sr">Sr</a></div>
+        <div class="element Y"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Y_gbrv.psp8">Y</a></div>
+        <div class="element Zr"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Zr_gbrv.psp8">Zr</a></div>
+        <div class="element Nb"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Nb_gbrv.psp8">Nb</a></div>
+        <div class="element Mo"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Mo_gbrv.psp8">Mo</a></div>
+        <div class="element Tc"><a href="https://example.com/elements/Tc">Tc</a></div>
+        <div class="element Ru"><a href="https://example.com/elements/Ru">Ru</a></div>
+        <div class="element Rh"><a href="https://example.com/elements/Rh">Rh</a></div>
+        <div class="element Pd"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Pd_NLPP_gbrv.psp8">Pd</a></div>
+        <div class="element Ag"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ag_gbrv.psp8">Ag</a></div>
+        <div class="element Cd"><a href="https://example.com/elements/Cd">Cd</a></div>
+        <div class="element In"><a href="https://example.com/elements/In">In</a></div>
+        <div class="element Sn"><a href="https://example.com/elements/Sn">Sn</a></div>
+        <div class="element Sb"><a href="https://example.com/elements/Sb">Sb</a></div>
+        <div class="element Te"><a href="https://example.com/elements/Te">Te</a></div>
+        <div class="element I"><a href="https://example.com/elements/I">I</a></div>
+        <div class="element Xe"><a href="https://example.com/elements/Xe">Xe</a></div>
+        <div class="element Cs"><a href="https://example.com/elements/Cs">Cs</a></div>
+        <div class="element Ba"><a href="https://example.com/elements/Ba">Ba</a></div>
+        <div class="element Hf"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Hf_gbrv.psp8">Hf</a></div>
+        <div class="element Ta"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ta_gbrv.psp8">Ta</a></div>
+        <div class="element W"><a href="https://example.com/elements/W">W</a></div>
+        <div class="element Re"><a href="https://example.com/elements/Re">Re</a></div>
+        <div class="element Os"><a href="https://example.com/elements/Os">Os</a></div>
+        <div class="element Ir"><a href="https://example.com/elements/Ir">Ir</a></div>
+        <div class="element Pt"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Pt_gbrv.psp8">Pt</a></div>
+        <div class="element Au"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Au_gbrv.psp8">Au</a></div>
+        <div class="element Hg"><a href="https://example.com/elements/Hg">Hg</a></div>
+        <div class="element Tl"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Tl_gbrv.psp8">Tl</a></div>
+        <div class="element Pb"><a href="https://example.com/elements/Pb">Pb</a></div>
+        <div class="element Bi"><a href="https://example.com/elements/Bi">Bi</a></div>
+        <div class="element Po"><a href="https://example.com/elements/Po">Po</a></div>
+        <div class="element At"><a href="https://example.com/elements/At">At</a></div>
+        <div class="element Rn"><a href="https://example.com/elements/Rn">Rn</a></div>
+        <div class="element Fr"><a href="https://example.com/elements/Fr">Fr</a></div>
+        <div class="element Ra"><a href="https://example.com/elements/Ra">Ra</a></div>
+        <div class="element Rf"><a href="https://example.com/elements/Rf">Rf</a></div>
+        <div class="element Db"><a href="https://example.com/elements/Db">Db</a></div>
+        <div class="element Sg"><a href="https://example.com/elements/Sg">Sg</a></div>
+        <div class="element Bh"><a href="https://example.com/elements/Bh">Bh</a></div>
+        <div class="element Hs"><a href="https://example.com/elements/Hs">Hs</a></div>
+        <div class="element Mt"><a href="https://example.com/elements/Mt">Mt</a></div>
+        <div class="element Ds"><a href="https://example.com/elements/Ds">Ds</a></div>
+        <div class="element Rg"><a href="https://example.com/elements/Rg">Rg</a></div>
+        <div class="element Cn"><a href="https://example.com/elements/Cn">Cn</a></div>
+        <div class="element Nh"><a href="https://example.com/elements/Nh">Nh</a></div>
+        <div class="element Fl"><a href="https://example.com/elements/Fl">Fl</a></div>
+        <div class="element Mc"><a href="https://example.com/elements/Mc">Mc</a></div>
+        <div class="element Lv"><a href="https://example.com/elements/Lv">Lv</a></div>
+        <div class="element Ts"><a href="https://example.com/elements/Ts">Ts</a></div>
+        <div class="element Og"><a href="https://example.com/elements/Og">Og</a></div>
+        <div class="element La"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/La_gbrv.psp8">La</a></div>
+        <div class="element Ce"><a href="https://example.com/elements/Ce">Ce</a></div>
+        <div class="element Pr"><a href="https://example.com/elements/Pr">Pr</a></div>
+        <div class="element Nd"><a href="https://example.com/elements/Nd">Nd</a></div>
+        <div class="element Pm"><a href="https://example.com/elements/Pm">Pm</a></div>
+        <div class="element Sm"><a href="https://example.com/elements/Sm">Sm</a></div>
+        <div class="element Eu"><a href="https://example.com/elements/Eu">Eu</a></div>
+        <div class="element Gd"><a href="https://example.com/elements/Gd">Gd</a></div>
+        <div class="element Tb"><a href="https://example.com/elements/Tb">Tb</a></div>
+        <div class="element Dy"><a href="https://example.com/elements/Dy">Dy</a></div>
+        <div class="element Ho"><a href="https://example.com/elements/Ho">Ho</a></div>
+        <div class="element Er"><a href="https://example.com/elements/Er">Er</a></div>
+        <div class="element Tm"><a href="https://example.com/elements/Tm">Tm</a></div>
+        <div class="element Yb"><a href="https://example.com/elements/Yb">Yb</a></div>
+        <div class="element Lu"><a href="https://example.com/elements/Lu">Lu</a></div>
+        <div class="element Ac"><a href="https://raw.githubusercontent.com/ValeriaRV99/OFPP/main/pp/Ac_gbrv.psp8">Ac</a></div>
+        <div class="element Th"><a href="https://example.com/elements/Th">Th</a></div>
+        <div class="element Pa"><a href="https://example.com/elements/Pa">Pa</a></div>
+        <div class="element U"><a href="https://example.com/elements/U">U</a></div>
+        <div class="element Np"><a href="https://example.com/elements/Np">Np</a></div>
+        <div class="element Pu"><a href="https://example.com/elements/Pu">Pu</a></div>
+        <div class="element Am"><a href="https://example.com/elements/Am">Am</a></div>
+        <div class="element Cm"><a href="https://example.com/elements/Cm">Cm</a></div>
+        <div class="element Bk"><a href="https://example.com/elements/Bk">Bk</a></div>
+        <div class="element Cf"><a href="https://example.com/elements/Cf">Cf</a></div>
+        <div class="element Es"><a href="https://example.com/elements/Es">Es</a></div>
+        <div class="element Fm"><a href="https://example.com/elements/Fm">Fm</a></div>
+        <div class="element Md"><a href="https://example.com/elements/Md">Md</a></div>
+        <div class="element No"><a href="https://example.com/elements/No">No</a></div>
+        <div class="element Lr"><a href="https://example.com/elements/Lr">Lr</a></div>
+        </div>
         </div>
     </div>
 </body>
