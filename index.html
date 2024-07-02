@@ -5,16 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFDFT</title>
     <style>
+        .container{
+            display: grid;
+            place-items:center;
+        }
+
+
         .periodic-table {
             display: grid;
             grid-template-columns: repeat(18, 1fr);
             gap: 5px;
         }
         .element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 10px;
-            border: 1px solid #ccc;
+            color: #fff;
+            font-weight: 700;
+            height: 60px;
+            width: 60px;
+            box-shadow: 0 0 10px #fff, 0 0 20px #ccc, 0 0 30px #aaa;
+            border-radius: 9px;
             text-align: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: padding 100ms ease-in-out 
         }
+
+        h1{
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 2rem;
+        }
+
+        .element:hover{
+            padding: 6px;
+        }
+        .element a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .H { grid-column: 1 / span 1; grid-row: 1; background-color: #FEB423; }
+        .He { grid-column: 18 / span 1; grid-row: 1; background-color: #FF4958; }
+        .Li { grid-column: 1 / span 1; grid-row: 2; background-color: #A694FE; }
+        .Be { grid-column: 2 / span 1; grid-row: 2; background-color: #B253F7; }
+        .B { grid-column: 13 / span 1; grid-row: 2; background-color: #3277E3; }
+        .C { grid-column: 14 / span 1; grid-row: 2; background-color: #FEB423; }
+        .N { grid-column: 15 / span 1; grid-row: 2; background-color: #FEB423; }
+        .O { grid-column: 16 / span 1; grid-row: 2; background-color: #FEB423; }
+        .F { grid-column: 17 / span 1; grid-row: 2; background-color: #FEB423; }
+        .Ne { grid-column: 18 / span 1; grid-row: 2; background-color: #FF4958; }
+        .Na { grid-column: 1 / span 1; grid-row: 3; background-color: #A694FE; }
+        .Mg { grid-column: 2 / span 1; grid-row: 3; background-color: #B253F7; }
+        .Al { grid-column: 13 / span 1; grid-row: 3; background-color: rgb(39, 161, 149); }
+        .Si { grid-column: 14 / span 1; grid-row: 3; background-color: #3277E3; }
+        .P { grid-column: 15 / span 1; grid-row: 3; background-color: #FEB423; }
+        .S { grid-column: 16 / span 1; grid-row: 3; background-color: #FEB423; }
+        .Cl { grid-column: 17 / span 1; grid-row: 3; background-color: #FEB423; }
+        .Ar { grid-column: 18 / span 1; grid-row: 3; background-color: #FF4958; }
+        .K { grid-column: 1 / span 1; grid-row: 4; background-color: #A694FE; }
+        .Ca { grid-column: 2 / span 1; grid-row: 4; background-color: #B253F7; }
+        .Sc { grid-column: 3 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .ti { grid-column: 4 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .V { grid-column: 5 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Cr { grid-column: 6 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Mn { grid-column: 7 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Fe { grid-column: 8 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Co { grid-column: 9 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Ni { grid-column: 10 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Cu { grid-column: 11 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Zn { grid-column: 12 / span 1; grid-row: 4; background-color: #44C3D6; }
+        .Ga { grid-column: 13 / span 1; grid-row: 4; background-color:  rgb(39, 161, 149); }
+        .Ge { grid-column: 14 / span 1; grid-row: 4; background-color: #3277E3; }
+        .As { grid-column: 15 / span 1; grid-row: 4; background-color: #3277E3; }
+        .Se { grid-column: 16 / span 1; grid-row: 4; background-color: #FEB423; }
+        .Br { grid-column: 17 / span 1; grid-row: 4; background-color: #FEB423; }
+        .Kr { grid-column: 18 / span 1; grid-row: 4; background-color: #FF4958; }
+        .Rb { grid-column: 1 / span 1; grid-row: 5; background-color: #A694FE; }
+        .Sr { grid-column: 2 / span 1; grid-row: 5; background-color: #B253F7; }
+        .Y { grid-column: 3 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Zr { grid-column: 4 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Nb { grid-column: 5 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Mo { grid-column: 6 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Tc { grid-column: 7 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Ru { grid-column: 8 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Rh { grid-column: 9 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Pd { grid-column: 10 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Ag { grid-column: 11 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .Cd { grid-column: 12 / span 1; grid-row: 5; background-color: #44C3D6; }
+        .In { grid-column: 13 / span 1; grid-row: 5; background-color:  rgb(39, 161, 149); }
+        .Sn { grid-column: 14 / span 1; grid-row: 5; background-color:  rgb(39, 161, 149); }
+        .Sb { grid-column: 15 / span 1; grid-row: 5; background-color: #3277E3; }
+        .Te { grid-column: 16 / span 1; grid-row: 5; background-color: #3277E3; }
+        .I { grid-column: 17 / span 1; grid-row: 5; background-color: #FEB423; }
+        .Xe { grid-column: 18 / span 1; grid-row: 5; background-color: #FF4958; }
+        .Hf { grid-column: 4 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Ta { grid-column: 5 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .W { grid-column: 6 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Re { grid-column: 7 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Os { grid-column: 8/ span 1; grid-row: 6; background-color: #44C3D6; }
+        .Ir { grid-column: 9 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Pt { grid-column: 10 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Au { grid-column: 11 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Hg { grid-column: 12 / span 1; grid-row: 6; background-color: #44C3D6; }
+        .Ti { grid-column: 13 / span 1; grid-row: 6; background-color:  rgb(39, 161, 149); }
+        .Pb { grid-column: 14 / span 1; grid-row: 6; background-color:  rgb(39, 161, 149); }
+        .Bi { grid-column: 15 / span 1; grid-row: 6; background-color:  rgb(39, 161, 149); }
+        .Po { grid-column: 16 / span 1; grid-row: 6; background-color:  rgb(39, 161, 149); }
+        .At { grid-column: 17 / span 1; grid-row: 6; background-color:  rgb(39, 161, 149); }
+        .Rn { grid-column: 18 / span 1; grid-row: 6; background-color: #FF4958; }
+        .Cs { grid-column: 1 / span 1; grid-row: 6; background-color: #A694FE; }
+        .Ba { grid-column: 2 / span 1; grid-row: 6; background-color: #B253F7; }
+        .La { grid-column: 3 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Ce { grid-column: 4 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Pr { grid-column: 5 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Nd { grid-column: 6 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Pm { grid-column: 7 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Sm { grid-column: 8 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Eu { grid-column: 9 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Gd { grid-column: 10 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Tb { grid-column: 11 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Dy { grid-column: 12 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Ho { grid-column: 13 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Er { grid-column: 14 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Tm { grid-column: 15 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Yb { grid-column: 16 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Lu { grid-column: 17 / span 1; grid-row: 10; background-color: #0C9CD8; margin-top:2em; }
+        .Fr { grid-column: 1 / span 1; grid-row: 7; background-color: #A694FE; }
+        .Ra { grid-column: 2 / span 1; grid-row: 7; background-color: #B253F7; }
+        .Ac { grid-column: 3 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Th { grid-column: 4 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Pa { grid-column: 5 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .U { grid-column: 6 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Np { grid-column: 7 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Pu { grid-column: 8 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Am { grid-column: 9 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Cm { grid-column: 10 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Bk { grid-column: 11 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Cf { grid-column: 12 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Es { grid-column: 13 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Fm { grid-column: 14 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Md { grid-column: 15 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .No { grid-column: 16 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Lr { grid-column: 17 / span 1; grid-row: 11; background-color: #4FCF3B; }
+        .Rf { grid-column: 4 / span 1; grid-row: 7; background-color: #44C3D6; }
+        .Db { grid-column: 5 / span 1; grid-row: 7; background-color: #44C3D6; }
+        .Sg { grid-column: 6 / span 1; grid-row: 7; background-color: #44C3D6; }
+        .Bh { grid-column: 7 / span 1; grid-row: 7; background-color: #44C3D6; }
+        .Hs { grid-column: 8 / span 1; grid-row: 7; background-color: #44C3D6; }
+        .Mt { grid-column: 9 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Ds { grid-column: 10 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Rg { grid-column: 11 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Cn { grid-column: 12 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Nh { grid-column: 13 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Fl { grid-column: 14 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Mc { grid-column: 15 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Lv { grid-column: 16 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Ts { grid-column: 17 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
+        .Og { grid-column: 18 / span 1; grid-row: 7; background-color:  rgb(39, 161, 149); }
     </style>
     <script>
         // Define the URLs for GBRV and PSL pseudopotentials
